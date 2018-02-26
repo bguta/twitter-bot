@@ -1,5 +1,5 @@
 # this is your twitter info
-# i removied mine
+# i removied mine but you can add yours and it will do the exact same thing
 
 import tweepy
 
