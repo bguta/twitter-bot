@@ -7,6 +7,7 @@ url = "http://www.azquotes.com/author/9322-Malcolm_X?p="
 # p must be between 1 and 32: this is the page
 # q must be between 1 and 25; this is the quote
 # this method returns a quote by malcolm x from the url
+# there are 781 quotes
 
 
 def getQuote(p, q):

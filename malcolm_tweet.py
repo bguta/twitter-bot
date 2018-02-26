@@ -2,6 +2,8 @@ import config
 import malcolm_quotes as mx
 import IndexReader as ir
 
+# this is the tweeter script! it tweets to the account specified in config
+
 
 def main():
     api = config.api()
