@@ -7,7 +7,6 @@ url = "http://www.azquotes.com/author/9322-Malcolm_X?p="
 # p must be between 1 and 32: this is the page
 # q must be between 1 and 25; this is the quote
 # this method returns a quote by malcolm x from the url
-# there are 781 quotes
 
 
 def getQuote(p, q):
@@ -24,5 +23,5 @@ def getQuote(p, q):
     qt = re.sub(r"^\s+", " ", qts[q].text.strip(), flags=re.MULTILINE)
     qt = re.sub("\n Report", "", qt)
     qt = re.sub("\n", "", qt)
-    qt = qt.split(". Malcolm ")[0]
+    qt = qt.split(". Malcolm X")[0]
     return qt
