@@ -14,6 +14,7 @@ def main():
 
     txt = mx.getQuote(pg, qt)
     print(txt)
+    print("page: " + str(pg) + " Quote: " + str(qt))
     if(div(txt) > 1):
         tweets = shorten(txt)
         api.update_status(tweets.pop(0))

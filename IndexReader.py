@@ -1,9 +1,5 @@
 import re
 
-# this reads the index.txt to determine which quote number to read next
-
-# this reads the file
-
 
 def look():
     with open("index.txt", "r") as file:
@@ -11,14 +7,10 @@ def look():
         ar = re.sub(r"\t", " ", line).split()
         return ar
 
-# this writes the file
-
 
 def write(p, q):
     with open("index.txt", "w") as file:
         file.write(str(p) + "\t" + str(q))
-
-# changes and adjusts the file and returns the page and quote numbers
 
 
 def main():
