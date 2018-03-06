@@ -15,8 +15,8 @@ def main():
     txt = mx.getQuote(pg, qt)
     # print(txt)
     print("page: " + str(pg) + " Quote: " + str(qt))
+    tweets = shorten(txt)
     if(div(txt) > 1):
-        tweets = shorten(txt)
         if (not posted(tweets)):
             api.update_status(tweets.pop(0))
             for tweet in tweets:
@@ -26,9 +26,8 @@ def main():
         else:
             main()
     else:
-        tweet = shorten(txt)
-        if (not posted(tweet)):
-            api.update_status(txt)
+        if (not posted(tweets)):
+            api.update_status(tweets[0])
             # print(tweet[0])
         else:
             main()
@@ -56,10 +55,17 @@ def shorten(txt):
 
 def posted(txts):
     tweets = [tweet.full_text for tweet in api.user_timeline(
-        id=api.me().id, count=10, tweet_mode="extended")]
+        id=api.me().id, count=(10 ** 4), tweet_mode="extended")]
     for tweet in tweets:
-        for txt in txts:
-            if txt == tweet:
-                print("YES")
-                return True
+        if eq(tweet, txts[0]):
+            print("Already posted")
+            return True
+    return False
+
+
+def eq(tx1, tx2):
+    if len(tx1) != len(tx2):
+        return False
+    if tx1 == tx2:
+        return True
     return False
