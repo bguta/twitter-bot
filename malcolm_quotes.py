@@ -21,7 +21,7 @@ def getQuote(p, q):
     s = bs(page.content, "html.parser")
     qts = s.findAll("ul", {"class": "list-quotes"})[0].findAll("li")
     qt = re.sub(r"^\s+", " ", qts[q].text.strip(), flags=re.MULTILINE)
-    qt = re.sub("\n Report", "", qt)
-    qt = re.sub("\n", "", qt)
+    qt = re.sub(r"\n Report", "", qt)
+    qt = re.sub(r"\n", "", qt)
     qt = qt.split(". Malcolm X")[0]
     return qt
