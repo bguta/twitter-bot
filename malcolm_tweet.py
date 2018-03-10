@@ -36,7 +36,7 @@ def main():
 def div(txt):
     if len(txt) > charLim:
         for i in range(1, 10):
-            if (len(txt) // i < 280 and len(txt) % 280 >= 40):
+            if (len(txt) // i < 280 and (len(txt) // i)  % 280 >= 10):
                 return i
         raise ValueError("WTF? how long is this quote")
     return 1
