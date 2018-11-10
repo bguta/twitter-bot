@@ -1,4 +1,4 @@
-# Malcolm X twitter bot
+# twitter bot
 
 This is a twitter bot that tweets Malcolm X tweets everyday. The bot is set up using heroku.
 
